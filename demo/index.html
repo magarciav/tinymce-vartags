@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="./assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>Ticket template</title>
+  <link href="./vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="col-lg-8 mx-auto p-4 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-4 border-bottom">
+      <p class="d-flex align-items-center text-body-emphasis text-decoration-none mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-ticket me-2"
+          viewBox="0 0 16 16">
+          <path
+            d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+        </svg>
+        <span class="fs-4">Ticket template</span>
+      </p>
+    </header>
+
+    <main>
+      <h2 class="text-body-emphasis">Confirm Ticket Resolution</h2>
+      <form class="col-md-9" method="POST">
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="emailInput" name="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="messageTextarea" class="form-label">Message</label>
+          <textarea class="form-control" id="messageTextarea" rows="5" name="message">
+            <p>Dear [*userName*],</p>
+            <p>We are pleased to inform you that we have successfully resolved the ticket you submitted with the number
+              [*ticketNumber*]. The resolution date was [*resolutionDate*].</p>
+            <p>Ticket Details:</p>
+            <ul>
+              <li>Ticket Number: [*ticketNumber*]</li>
+              <li>Resolution Date: [*resolutionDate*]</li>
+              <li>Ticket Title: [*ticketTitle*]&nbsp;</li>
+            </ul>
+            <p>We appreciate your cooperation and trust in our service.</p>
+            <p>Best regards,<br />[*name*]<br />[*position*]<br />[*company*]</p>
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </main>
+
+    <footer class="pt-5 my-5 text-body-secondary border-top">
+      Ticket template &middot; &copy; 2024
+    </footer>
+  </section>
+  <script src="./vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src='./vendors/tinymce_5.10.9/tinymce.min.js'></script>
+  <!-- <script src='./vendors/tinymce_6.8.3/tinymce.min.js'></script> -->
+  <script src='../build/vartags/plugin.js'></script>
+  <script>
+    window.tinymce.init({
+      selector: '#messageTextarea',
+      height: '55vh',
+      plugins: 'image,advlist,lists,table,code,help,vartags',
+      menubar: 'edit format tools table help',
+      toolbar: 'vartagsbtn | code | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | numlist bullist',
+      theme_advanced_toolbar_align: 'center',
+      statusbar: false,
+      vartags_prefix: '[*',
+      vartags_suffix: '*]',
+      vartags_items: [
+        {
+          title: 'Sender Information',
+          menu: [
+            {
+              title: 'Name',
+              value: 'name'
+            },
+            {
+              title: 'Position',
+              value: 'position'
+            },
+          ]
+        },
+        {
+          title: 'User and Ticket',
+          menu: [
+            {
+              title: 'User Name',
+              value: 'userName'
+            },
+            {
+              title: 'Ticket',
+              menu: [
+                {
+                  title: 'Ticket Number',
+                  value: 'ticketNumber'
+                },
+                {
+                  title: 'Ticket Title',
+                  value: 'ticketTitle'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: 'Resolution Date',
+          value: 'resolutionDate'
+        },
+        {
+          title: 'Company',
+          value: 'company'
+        }
+      ],
+    });
+  </script>
+</body>
+
+</html>
