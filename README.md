@@ -40,17 +40,17 @@ window.tinymce.init({
 });
 ```
 
-## VarTags Configuration Options
+3. **Configuration Options**
 
-When using the VarTags plugin, you can customize its behavior with the following configuration options:
+  - When using the VarTags plugin, you can customize its behavior with the following configuration options:
 
-- **`toolbar: 'vartagsbtn'`:** Add the 'vartagsbtn' button to the toolbar, providing a convenient way for users to interact with VarTags.
+    - **`toolbar: 'vartagsbtn'`:** Add the 'vartagsbtn' button to the toolbar, providing a convenient way for users to interact with VarTags.
 
-- **`vartags_prefix: '[*'`:** Specify the prefix to identify the beginning of a variable tag. For example, if set to `[*` as shown in the example, a variable tag might look like `[*variableName*]` .
+    - **`vartags_prefix: '[*'`:** Specify the prefix to identify the beginning of a variable tag. For example, if set to `[*` as shown in the example, a variable tag might look like `[*variableName*]` .
 
-- **`vartags_suffix: '*]'`:** Define the suffix to identify the end of a variable tag. Using the example, a complete variable tag would be `[*variableName*]`.
+    - **`vartags_suffix: '*]'`:** Define the suffix to identify the end of a variable tag. Using the example, a complete variable tag would be `[*variableName*]`.
 
-- **`vartags_items: []`:** Populate this array with predefined variable items that users can select from when working with VarTags. Each item in the array should be an object with 'title' and 'value' properties. Additionally, you can include a `menu` property with an array of objects, each having 'title' and 'value' properties. This allows for nested menu structures. For example:
+    - **`vartags_items: []`:** Populate this array with predefined variable items that users can select from when working with VarTags. Each item in the array should be an object with 'title' and 'value' properties. Additionally, you can include a `menu` property with an array of objects, each having 'title' and 'value' properties. This allows for nested menu structures. For example:
 
 ```javascript
 vartags_items: [
